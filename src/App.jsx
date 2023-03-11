@@ -1,11 +1,35 @@
+import { Outlet } from 'react-router-dom'
+import NamedLink from '@/components/NamedLink'
+ 
 function App() {
   return (
-    <div className="p-4">
-      <h1 className="heading">Vite + React</h1>
-      <div className="text-red-600">
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
+    <div className="App">
+      <header className="py-6 bg-gray-100 shadow">
+        <div className="container md:px-2 px-4 mx-auto">
+          <nav className="flex gap-4 justify-between">
+            <div className="flex gap-4 items-center">
+              <h2 className="text-xl font-bold">
+                <div
+                  className="inline-flex items-center justify-center bg-blue-600 w-16 h-8 text-center text-white rounded mr-1"
+                >
+                  E4SY
+                </div>
+                {/* Ammar4web */}
+              </h2>
+              <NamedLink name="home">
+                Home
+              </NamedLink>
+            </div>
+            <div className="flex gap-4 items-center">
+              <NamedLink name="register">
+                Register
+              </NamedLink>
+            </div>
+          </nav>
+        </div>
+      </header>
+      <div className="container md:px-2 px-4 pt-8 md:pt-16 mx-auto">
+        <Outlet />
       </div>
     </div>
   )
